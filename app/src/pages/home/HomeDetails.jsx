@@ -2,7 +2,7 @@ import React from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
 
 export const HomeDetailsLoader = async ({params}) => {
-    const {id} = params
+    const {id} = params;
     // const res = await fetch(`http://localhost:2004/listItem/${id}`)
     const res = await fetch(`${import.meta.env.VITE_APP_API_CARD_LIST}/${id}` )
     return res.json()

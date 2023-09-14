@@ -28,7 +28,6 @@ from 'react-router-dom'
 //Import Loader Data Routing
 import { FetchJSON } from './components/cardList'
 import { HomeDetailsLoader } from './pages/home/HomeDetails'
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout/>}>
