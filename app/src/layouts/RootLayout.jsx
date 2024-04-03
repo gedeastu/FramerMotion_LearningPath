@@ -1,13 +1,23 @@
 import React from 'react'
-import {Outlet} from 'react-router-dom'
+import {Outlet,useLocation, useParams} from 'react-router-dom'
 import Navbar from '../components/navbar'
-export default function RootLayout() {
+
+export const HomeDetailsLoader = async ({params}) => {
+  const {id} = params;
+  // const res = await fetch(`http://localhost:2004/listItem/${id}`)
+  const res = await fetch(`${import.meta.env.VITE_APP_API_CARD_LIST}/${id}` )
+  return res.json()
+}
+
+export default function RootLayout({params}) {
+  const location = useLocation();
+  const {id} = useParams()
   return (
     <>
     <div className='root-layout'>
     {/* Header RootLayout */}
-    <header>
-    <Navbar />
+    <header className='w-screen flex justify-center p-5'>
+    {location.pathname === `/${id}` ? null : <Navbar />}
     </header>
     {/* Main RootLayout */}
     <main>

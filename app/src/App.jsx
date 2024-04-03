@@ -30,11 +30,11 @@ import { FetchJSON } from './components/cardList'
 import { HomeDetailsLoader } from './pages/home/HomeDetails'
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<RootLayout/>}>
+    <Route path='/' element={<RootLayout/>} loader={HomeDetailsLoader}>
       {/* Home Routing */}
       <Route path='/' element={<HomeLayout/>}>
       <Route index element={<Home/>} loader={FetchJSON}/>
-      <Route path=':id' element={<HomeDetails/>} loader={HomeDetailsLoader}/>
+      <Route path='/:id' element={<HomeDetails/>} loader={HomeDetailsLoader}/>
       </Route>
 
       {/* Info Routing */}
