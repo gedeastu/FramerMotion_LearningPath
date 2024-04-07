@@ -4,7 +4,7 @@ import {useLoaderData,Link} from 'react-router-dom'
 
 export const FetchJSON = async () => {
     const res = await fetch(import.meta.env.VITE_APP_API_CARD_LIST)
-    console.log(res);
+    //console.log(res);
     return res.json()
 }
 

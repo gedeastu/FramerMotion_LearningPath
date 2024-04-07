@@ -18,11 +18,20 @@ export default function Navbar() {
       link:"/about"
     }
   ]
+  
   const [isVisited,setIsVisited] = useState(0)
+
+  const handleClick = (index) => {
+    setIsVisited((previous)=>{
+      return previous = index
+    })
+  }
   const renderNavItems = routeLink.map((item,index)=>{
-    const isExpanded = index === isVisited
+    const visit = index === isVisited
     return(
-      <NavLink key={item.id} to={item.link} onClick={()=>setIsVisited(index)} className={isExpanded && `font-bold`}>
+      <NavLink key={item.id} to={item.link} onClick={()=>{
+        handleClick(index)
+      }} className={visit && `font-bold`}>
         {item.label}
       </NavLink>
     )
