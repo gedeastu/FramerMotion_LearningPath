@@ -31,7 +31,7 @@ export default function Navbar() {
     return(
       <NavLink key={item.id} to={item.link} onClick={()=>{
         handleClick(index)
-      }} className={visit && `font-bold`}>
+      }} className={visit && `font-bold transition-all`}>
         {item.label}
       </NavLink>
     )
